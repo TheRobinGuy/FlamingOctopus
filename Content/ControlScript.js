@@ -13,11 +13,12 @@ $(document).ready(function() {
             url: proxy + apiLinkDS,
             success:function(data) { 
                 console.log(data);
-                var imgSrc = data.currently.icon;
+                var imgSrc = data.currently.summary;      
+                var temp = data.currently.temperature;
                 var location = data.timezone.split('/')[1];
                 console.log(location);
                 
-                $("#output").text("There will be " + imgSrc + " in " + location + ".");
+                $("#output").text("It will be " + imgSrc + " in " + location + ".\nIt is " + temp + " *C.");
             }
           });
     });
