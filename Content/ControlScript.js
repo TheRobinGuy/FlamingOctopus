@@ -14,11 +14,12 @@ $(document).ready(function() {
             success:function(data) { 
                 console.log(data);
                 var imgSrc = data.currently.summary;      
-                var temp = data.currently.temperature;
+                var tempF = data.currently.temperature;
                 var location = data.timezone.split('/')[1];
                 console.log(location);
-                
-                $("#output").text("It will be " + imgSrc + " in " + location + ".\nIt is " + temp + " °C.");
+                //Converting From °F to °C
+                var tempC = (tempF - 32) * (5/9);
+                $("#output").text("It will be " + imgSrc + " in " + location + ".\nIt is " + Math.round(tempC) + " °C.");
             }
           });
     });
