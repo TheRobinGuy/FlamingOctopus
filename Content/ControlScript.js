@@ -18,7 +18,7 @@ $(document).ready(function() {
                 var location = data.timezone.split('/')[1];
                 console.log(location);
                 
-                $("#output").text("It will be " + imgSrc + " in " + location + ".\nIt is " + temp + " *C.");
+                $("#output").text("It will be " + imgSrc + " in " + location + ".\nIt is " + temp + " °C.");
             }
           });
     });
